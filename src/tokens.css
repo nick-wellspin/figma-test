@@ -48,6 +48,10 @@
     var(--fig-pill-line-height) + var(--fig-pill-padding-block) * 2
   );
 
+  /* Hover tint for the pills — not in Figma, the frame carries no
+   * interaction states. Doubles the resting 4% tint. */
+  --home-pill-bg-hover: rgb(0 0 0 / 0.08);
+
   /* Fluid ramps -----------------------------------------------------
    * Figma holds a single 1440px frame, so the mobile end of each ramp
    * is a design decision, not a measured value. Each ramp interpolates

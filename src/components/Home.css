@@ -47,6 +47,14 @@
   line-height: var(--fig-pill-line-height);
   text-decoration: none;
   white-space: nowrap;
+  transition: background-color 150ms ease;
+}
+
+/* Guarded so the tint doesn't stick after a tap on touch devices. */
+@media (hover: hover) {
+  .home__link:hover {
+    background: var(--home-pill-bg-hover);
+  }
 }
 
 .home__link:focus-visible {
