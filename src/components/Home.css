@@ -1,0 +1,50 @@
+/* Home — Figma node 1:2
+ * Every value below resolves through a token in src/tokens.css. */
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-block: var(--home-stack-gap);
+  padding-inline: var(--home-gutter);
+  background: var(--fig-color-surface);
+  color: var(--fig-color-text);
+}
+
+.home__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--home-stack-gap);
+  inline-size: 100%;
+  max-inline-size: var(--fig-headline-width);
+}
+
+.home__avatar {
+  flex-shrink: 0;
+  display: block;
+  inline-size: var(--home-avatar-size);
+  block-size: var(--home-avatar-size);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home__headline {
+  margin: 0;
+  font-family: var(--fig-font-family);
+  font-weight: var(--fig-font-weight);
+  font-size: var(--home-font-size);
+  line-height: var(--fig-line-height);
+  letter-spacing: var(--fig-letter-spacing);
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+/* "(7yoe)" — Inter Medium Italic; weight must not bump to bold */
+.home__headline em {
+  font-style: italic;
+  font-weight: inherit;
+}

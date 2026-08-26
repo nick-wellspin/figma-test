@@ -1,0 +1,43 @@
+/*
+ * Design tokens — Figma
+ * File: "Test run" · ojBEadcA1JhPYNTDM6OyOb
+ * Node: 1:2 "Home" (frame 1440 × 900)
+ *
+ * NOTE: this node has no bound Figma Variables — get_variable_defs on 1:2
+ * returned {}. The --fig-* tokens below are the raw measured values read off
+ * the node, transcribed 1:1 and annotated with their source layer. They are
+ * the single source of truth for the component: if Variables are added in
+ * Figma later, only this block changes and nothing downstream moves.
+ */
+
+:root {
+  /* Color ---------------------------------------------------------- */
+  --fig-color-surface: #d9d9d9; /* frame 1:2 fill   */
+  --fig-color-text: #000000; /* text 1:4 fill    */
+
+  /* Typography — text node 1:4 ------------------------------------- */
+  --fig-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+    sans-serif;
+  --fig-font-weight: 500; /* Inter Medium     */
+  --fig-font-size: 48px;
+  --fig-line-height: 1; /* 48px / 48px      */
+  --fig-letter-spacing: -0.04em; /* -1.92px @ 48px   */
+
+  /* Size ----------------------------------------------------------- */
+  --fig-avatar-size: 64px; /* ellipse 1:18     */
+  --fig-headline-width: 817px; /* text 1:4 width   */
+  --fig-frame-height: 900px; /* frame 1:2        */
+
+  /* Spacing -------------------------------------------------------- */
+  --fig-stack-gap: 40px; /* 406 (text top) − 366 (ellipse bottom) */
+
+  /* Fluid ramps -----------------------------------------------------
+   * Figma holds a single 1440px frame, so the mobile end of each ramp
+   * is a design decision, not a measured value. Each ramp interpolates
+   * 375px → 1440px and clamps to the Figma value at the top, so the
+   * layout is pixel-exact at 1440 and up. */
+  --home-font-size: clamp(28px, 20.96px + 1.878vw, var(--fig-font-size));
+  --home-avatar-size: clamp(48px, 42.37px + 1.502vw, var(--fig-avatar-size));
+  --home-stack-gap: clamp(24px, 18.37px + 1.502vw, var(--fig-stack-gap));
+  --home-gutter: clamp(20px, 12.96px + 1.878vw, 40px); /* not in Figma */
+}
