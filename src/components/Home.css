@@ -2,18 +2,62 @@
  * Every value below resolves through a token in src/tokens.css. */
 
 .home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  /* Row 3 is an empty mirror of the nav row, so the intro centres
+   * against the whole frame the way it does in Figma: block top 302 +
+   * height 296 → centre 450 = 900 / 2. */
+  grid-template-rows: auto 1fr var(--home-nav-height);
+  justify-items: center;
   min-height: 100vh;
   min-height: 100svh;
-  padding-block: var(--home-stack-gap);
+  padding-block: var(--home-nav-offset);
   padding-inline: var(--home-gutter);
   background: var(--fig-color-surface);
   color: var(--fig-color-text);
 }
 
+/* Nav — node 3:41 --------------------------------------------------- */
+
+.home__nav {
+  inline-size: 100%;
+}
+
+.home__links {
+  display: flex;
+  flex-wrap: wrap; /* not in Figma — keeps the row intact on narrow screens */
+  align-items: center;
+  justify-content: center;
+  gap: var(--fig-nav-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--fig-pill-padding-block) var(--fig-pill-padding-inline);
+  border-radius: var(--fig-pill-radius);
+  background: var(--fig-pill-bg);
+  color: inherit;
+  font-family: var(--fig-font-family);
+  font-size: var(--fig-pill-font-size);
+  font-weight: var(--fig-pill-font-weight);
+  line-height: var(--fig-pill-line-height);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.home__link:focus-visible {
+  outline: 2px solid var(--fig-color-text);
+  outline-offset: 2px;
+}
+
+/* Intro — nodes 1:18 + 1:4 ------------------------------------------ */
+
 .home__intro {
+  align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;

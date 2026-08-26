@@ -31,6 +31,23 @@
   /* Spacing -------------------------------------------------------- */
   --fig-stack-gap: 40px; /* 406 (text top) − 366 (ellipse bottom) */
 
+  /* Nav — row 3:41, pills 3:31 / 3:37 / 3:39 ----------------------- */
+  --fig-nav-offset: 40px; /* row 3:41 top     */
+  --fig-nav-gap: 8px; /* row 3:41 gap     */
+  --fig-pill-bg: rgb(0 0 0 / 0.04);
+  --fig-pill-radius: 99px;
+  --fig-pill-padding-block: 10px;
+  --fig-pill-padding-inline: 16px;
+  --fig-pill-font-weight: 400; /* Inter Regular    */
+  --fig-pill-font-size: 12px;
+  --fig-pill-line-height: 16px;
+
+  /* Derived: the pill row's own height, used to mirror it below the
+   * intro so the intro stays centred against the full frame. */
+  --home-nav-height: calc(
+    var(--fig-pill-line-height) + var(--fig-pill-padding-block) * 2
+  );
+
   /* Fluid ramps -----------------------------------------------------
    * Figma holds a single 1440px frame, so the mobile end of each ramp
    * is a design decision, not a measured value. Each ramp interpolates
@@ -39,5 +56,6 @@
   --home-font-size: clamp(28px, 20.96px + 1.878vw, var(--fig-font-size));
   --home-avatar-size: clamp(48px, 42.37px + 1.502vw, var(--fig-avatar-size));
   --home-stack-gap: clamp(24px, 18.37px + 1.502vw, var(--fig-stack-gap));
+  --home-nav-offset: clamp(24px, 18.37px + 1.502vw, var(--fig-nav-offset));
   --home-gutter: clamp(20px, 12.96px + 1.878vw, 40px); /* not in Figma */
 }
